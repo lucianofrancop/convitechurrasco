@@ -4,7 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Churrasqueada Luciano - 30 anos</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:'Poppins',sans-serif;background:#fafafa;color:#333}
@@ -30,12 +32,14 @@ footer{margin-top:60px;background:#222;color:white;text-align:center;padding:30p
 </head>
 <body>
 
+<!-- HERO -->
 <section class="hero">
 <h1>🔥 Churrasqueada 🔥<br>Luciano 30 anos</h1>
 <p>31 de Outubro 2026 • Ituiutaba/MG</p>
 <a href="#rsvp" class="btn">Confirmar presença</a>
 </section>
 
+<!-- SOBRE EVENTO -->
 <section>
 <div class="card">
 <h2>🍖 Sobre o evento</h2>
@@ -47,6 +51,7 @@ Prepare-se para um dia com muita comida boa, risadas e celebração.<br><br>
 </div>
 </section>
 
+<!-- PLAYLIST -->
 <section>
 <h2>🎵 Playlist do churrasco</h2>
 <div class="card" style="text-align:center">
@@ -54,6 +59,7 @@ Prepare-se para um dia com muita comida boa, risadas e celebração.<br><br>
 </div>
 </section>
 
+<!-- CONTAGEM REGRESSIVA -->
 <section>
 <h2>⏳ Contagem regressiva</h2>
 <div class="countdown">
@@ -64,6 +70,7 @@ Prepare-se para um dia com muita comida boa, risadas e celebração.<br><br>
 </div>
 </section>
 
+<!-- INFORMAÇÕES -->
 <section>
 <h2>📅 Informações</h2>
 <div class="info-grid">
@@ -74,6 +81,7 @@ Prepare-se para um dia com muita comida boa, risadas e celebração.<br><br>
 </div>
 </section>
 
+<!-- MAPA -->
 <section>
 <h2>📍 Local</h2>
 <div class="map">
@@ -81,11 +89,12 @@ Prepare-se para um dia com muita comida boa, risadas e celebração.<br><br>
 </div>
 <div style="text-align:center;margin-top:20px">
 <a href="https://www.google.com/maps/dir/?api=1&destination=-18.9672765,-49.4747441" target="_blank">
-<button style="background:#4285F4;color:white;border:none;padding:12px 25px;border-radius:8px;font-size:16px">Abrir rota no Google Maps</button>
+<button style="background:#4285F4">Abrir rota no Google Maps</button>
 </a>
 </div>
 </section>
 
+<!-- FORMULÁRIO RSVP -->
 <section id="rsvp">
 <div class="card">
 <h2>✅ Confirmação de presença</h2>
@@ -106,6 +115,7 @@ Prepare-se para um dia com muita comida boa, risadas e celebração.<br><br>
 <option value="sim">Sim</option>
 <option value="nao">Não</option>
 </select>
+
 <div id="areaAcompanhante" class="hidden">
 <input id="nomeAcompanhante" type="text" placeholder="Nome do acompanhante">
 </div>
@@ -116,6 +126,7 @@ Prepare-se para um dia com muita comida boa, risadas e celebração.<br><br>
 <option value="sim">Sim</option>
 <option value="nao">Não</option>
 </select>
+
 <div id="areaFilhos" class="hidden">
 <div id="listaFilhos"></div>
 <button type="button" id="addFilho">Adicionar outro filho</button>
@@ -124,21 +135,28 @@ Prepare-se para um dia com muita comida boa, risadas e celebração.<br><br>
 <button type="submit">Confirmar presença</button>
 </form>
 
-<div id="msg" class="success hidden">🎉 Presença confirmada! Obrigado por responder.</div>
+<div id="msg" class="success hidden">
+🎉 Presença confirmada! Obrigado por responder.
+</div>
 </div>
 </section>
 
-<footer><p>Churrasqueada do Luciano • 2026</p></footer>
+<footer>
+<p>Churrasqueada do Luciano • 2026</p>
+</footer>
 
 <script>
-const SCRIPT_URL="https://script.google.com/macros/s/AKfycbz2zhMZI8NylxwYL-vBl4InphG4BtQfGq3fNo8oifaasfMGGY81BH7tqt8GhVmbsZvg5w/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw_CFNmw9eh234hSR7ZZz8Imy3LuNBVrcDBBm8mr7XkjVddIPP-Pv1wQMopev2oq0YLkw/exec"; 
 
+// Acompanhante
 const acompanhante=document.getElementById("acompanhante");
 const areaAcompanhante=document.getElementById("areaAcompanhante");
 acompanhante.addEventListener("change",()=>{
-  areaAcompanhante.classList.toggle("hidden", acompanhante.value!=="sim");
+  if(acompanhante.value==="sim") areaAcompanhante.classList.remove("hidden");
+  else areaAcompanhante.classList.add("hidden");
 });
 
+// Filhos
 const temFilhos=document.getElementById("temFilhos");
 const areaFilhos=document.getElementById("areaFilhos");
 const listaFilhos=document.getElementById("listaFilhos");
@@ -158,29 +176,39 @@ temFilhos.addEventListener("change",()=>{
 function addFilho(){
   contadorFilhos++;
   const div=document.createElement("div");
-  div.innerHTML=`<input class="filhoNome" placeholder="Nome do filho ${contadorFilhos}">
-  <input class="filhoIdade" placeholder="Idade do filho ${contadorFilhos}">`;
+  div.innerHTML=`
+    <input class="filhoNome" placeholder="Nome do filho ${contadorFilhos}">
+    <input class="filhoIdade" placeholder="Idade do filho ${contadorFilhos}">
+  `;
   listaFilhos.appendChild(div);
 }
+
 document.getElementById("addFilho").addEventListener("click",addFilho);
 
+// SUBMIT
 document.getElementById("form").addEventListener("submit",(e)=>{
   e.preventDefault();
-  const dados = {
+  const params = new URLSearchParams({
     nome: document.getElementById("nome").value,
     telefone: document.getElementById("telefone").value,
     presenca: document.getElementById("presenca").value,
     acompanhante: document.getElementById("nomeAcompanhante").value,
     filhos: [...document.querySelectorAll(".filhoNome")].map(e=>e.value).join(", "),
     idades: [...document.querySelectorAll(".filhoIdade")].map(e=>e.value).join(", ")
-  };
-  fetch(`${SCRIPT_URL}?nome=${encodeURIComponent(dados.nome)}&telefone=${encodeURIComponent(dados.telefone)}&presenca=${encodeURIComponent(dados.presenca)}&acompanhante=${encodeURIComponent(dados.acompanhante)}&filhos=${encodeURIComponent(dados.filhos)}&idades=${encodeURIComponent(dados.idades)}`)
-  .then(()=>document.getElementById("msg").classList.remove("hidden"));
+  });
+  fetch(`${SCRIPT_URL}?${params.toString()}`, { method: "GET" })
+    .then(res=>res.json())
+    .then(()=>document.getElementById("msg").classList.remove("hidden"))
+    .catch(()=>alert("Erro ao enviar confirmação"));
+
   document.getElementById("form").reset();
-  listaFilhos.innerHTML=""; contadorFilhos=0;
-  areaAcompanhante.classList.add("hidden"); areaFilhos.classList.add("hidden");
+  listaFilhos.innerHTML="";
+  contadorFilhos=0;
+  areaAcompanhante.classList.add("hidden");
+  areaFilhos.classList.add("hidden");
 });
 
+// Contagem regressiva
 const eventDate=new Date("Oct 31, 2026 12:00:00").getTime();
 setInterval(()=>{
   const now=new Date().getTime();
