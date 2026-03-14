@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -194,19 +195,6 @@ allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-pictur
 
 </section>
 
-<section>
-
-<h2>⏳ Contagem regressiva</h2>
-
-<div class="countdown">
-<div><span id="dias"></span><br>Dias</div>
-<div><span id="horas"></span><br>Horas</div>
-<div><span id="minutos"></span><br>Min</div>
-<div><span id="segundos"></span><br>Seg</div>
-</div>
-
-</section>
-
 <section id="rsvp">
 
 <div class="card">
@@ -248,11 +236,8 @@ allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-pictur
 </select>
 
 <div id="areaFilhos" class="hidden">
-
 <div id="listaFilhos"></div>
-
 <button type="button" id="addFilho">Adicionar filho</button>
-
 </div>
 
 <button type="submit">Confirmar presença</button>
@@ -275,7 +260,7 @@ allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-pictur
 
 <script>
 
-const SCRIPT_URL="https://script.google.com/macros/s/AKfycbwghm0Cgymelr7y5J5nndcUxK3iAmIsu3h2YrArMxx7OrebC_DIABG3FUezU_Eo3L5Vgg/exec";
+const SCRIPT_URL="https://script.google.com/macros/s/AKfycbxZmvl_QMteQSzWUaJ0pinwDJGEdCZ_9-NswyCeZJ7kNCtsnyKlMhDzkqHM654pE4sY1Q/exec";
 
 const acompanhante=document.getElementById("acompanhante");
 const areaAcompanhante=document.getElementById("areaAcompanhante");
@@ -299,7 +284,6 @@ let contadorFilhos=0;
 temFilhos.addEventListener("change",()=>{
 
 if(temFilhos.value==="sim"){
-
 areaFilhos.classList.remove("hidden");
 
 if(contadorFilhos===0){
@@ -307,11 +291,9 @@ addFilho();
 }
 
 }else{
-
 areaFilhos.classList.add("hidden");
 listaFilhos.innerHTML="";
 contadorFilhos=0;
-
 }
 
 });
@@ -333,29 +315,28 @@ listaFilhos.appendChild(div);
 
 document.getElementById("addFilho").addEventListener("click",addFilho);
 
-document.getElementById("form").addEventListener("submit",async(e)=>{
+document.getElementById("form").addEventListener("submit",(e)=>{
 
 e.preventDefault();
 
-const dados={
+const nome=document.getElementById("nome").value;
+const telefone=document.getElementById("telefone").value;
+const presenca=document.getElementById("presenca").value;
+const acompanhante=document.getElementById("nomeAcompanhante").value;
 
-nome:document.getElementById("nome").value,
-telefone:document.getElementById("telefone").value,
-presenca:document.getElementById("presenca").value,
-acompanhante:document.getElementById("nomeAcompanhante").value,
-filhos:[...document.querySelectorAll(".filhoNome")].map(e=>e.value).join(", "),
-idades:[...document.querySelectorAll(".filhoIdade")].map(e=>e.value).join(", ")
+const filhos=[...document.querySelectorAll(".filhoNome")].map(e=>e.value).join(", ");
+const idades=[...document.querySelectorAll(".filhoIdade")].map(e=>e.value).join(", ");
 
-};
+const url=
+SCRIPT_URL+
+"?nome="+encodeURIComponent(nome)+
+"&telefone="+encodeURIComponent(telefone)+
+"&presenca="+encodeURIComponent(presenca)+
+"&acompanhante="+encodeURIComponent(acompanhante)+
+"&filhos="+encodeURIComponent(filhos)+
+"&idades="+encodeURIComponent(idades);
 
-try{
-
-await fetch(SCRIPT_URL,{
-method:"POST",
-mode:"no-cors",
-headers:{"Content-Type":"application/json"},
-body:JSON.stringify(dados)
-});
+fetch(url);
 
 document.getElementById("msg").classList.remove("hidden");
 
@@ -367,29 +348,10 @@ contadorFilhos=0;
 areaFilhos.classList.add("hidden");
 areaAcompanhante.classList.add("hidden");
 
-}catch(err){
-
-alert("Erro ao enviar confirmação.");
-
-}
-
 });
-
-const eventDate=new Date("Oct 31, 2026 12:00:00").getTime();
-
-setInterval(()=>{
-
-const now=new Date().getTime();
-const distance=eventDate-now;
-
-document.getElementById("dias").innerText=Math.floor(distance/(1000*60*60*24));
-document.getElementById("horas").innerText=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
-document.getElementById("minutos").innerText=Math.floor((distance%(1000*60*60))/(1000*60));
-document.getElementById("segundos").innerText=Math.floor((distance%(1000*60))/1000);
-
-},1000);
 
 </script>
 
 </body>
 </html>
+```
