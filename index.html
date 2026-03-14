@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -25,7 +26,7 @@ background-size:cover;
 background-position:center;
 color:white;
 text-align:center;
-padding:140px 20px;
+padding:140px 20px
 }
 
 .hero h1{font-size:50px;margin:0}
@@ -137,6 +138,7 @@ padding:30px
 }
 
 </style>
+
 </head>
 
 <body>
@@ -162,7 +164,8 @@ Estou chegando aos 30 anos e quero comemorar com um churrasco especial.
 <br><br>
 Prepare-se para um dia com muita comida boa, risadas e celebração.
 <br><br>
- <strong>A fumaceira já começou, a carne tá no ponto e o sucesso é garantido: cada um traz sua bebida e a festa fica completa! 🍺🍺 <strong>
+
+<strong>A fumaceira já começou, a carne tá no ponto e o sucesso é garantido: cada um traz sua bebida e a festa fica completa! 🍺</strong>
 
 </p>
 
@@ -242,7 +245,7 @@ allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-pictur
 
 <a href="https://www.google.com/maps/dir/?api=1&destination=-18.9672765,-49.4747441" target="_blank">
 
-<button style="background:#4285F4;color:white;border:none;padding:12px 25px;border-radius:8px;font-size:16px">
+<button style="background:#4285F4">
 
 Abrir rota no Google Maps
 
@@ -314,19 +317,21 @@ Abrir rota no Google Maps
 </section>
 
 <footer>
+
 <p>Churrasqueada do Luciano • 2026</p>
+
 </footer>
 
 <script>
 
-const SCRIPT_URL="https://script.google.com/macros/s/AKfycbwipIakMsNkUNPZ7AFl32Rvx5vb1gFy33KRyqcmhbwaXlpWjsF4kiku7zf4ns0brtoCeA/exec";
+const SCRIPT_URL="https://script.google.com/macros/s/AKfycbyKztpVMLfYSdFaHCrA5dtpui9gASGRi1Dj8EYS1JMRCBTO8CjWmXlO4-NRH8thtkoN7w/exec";
 
 const acompanhante=document.getElementById("acompanhante");
 const areaAcompanhante=document.getElementById("areaAcompanhante");
 
-acompanhante.addEventListener("change",function(){
+acompanhante.addEventListener("change",()=>{
 
-if(this.value==="sim"){
+if(acompanhante.value==="sim"){
 areaAcompanhante.classList.remove("hidden");
 }else{
 areaAcompanhante.classList.add("hidden");
@@ -340,14 +345,14 @@ const listaFilhos=document.getElementById("listaFilhos");
 
 let contadorFilhos=0;
 
-temFilhos.addEventListener("change",function(){
+temFilhos.addEventListener("change",()=>{
 
-if(this.value==="sim"){
+if(temFilhos.value==="sim"){
 
 areaFilhos.classList.remove("hidden");
 
 if(contadorFilhos===0){
-adicionarFilho();
+addFilho();
 }
 
 }else{
@@ -360,56 +365,59 @@ contadorFilhos=0;
 
 });
 
-function adicionarFilho(){
+function addFilho(){
 
 contadorFilhos++;
 
 const div=document.createElement("div");
 
 div.innerHTML=`
-<input type="text" placeholder="Nome do filho ${contadorFilhos}" class="filhoNome">
-<input type="number" placeholder="Idade do filho ${contadorFilhos}" class="filhoIdade">
+<input class="filhoNome" placeholder="Nome do filho ${contadorFilhos}">
+<input class="filhoIdade" placeholder="Idade do filho ${contadorFilhos}">
 `;
 
 listaFilhos.appendChild(div);
 
 }
 
-document.getElementById("addFilho").addEventListener("click",adicionarFilho);
+document.getElementById("addFilho").addEventListener("click",addFilho);
 
-document.getElementById("form").addEventListener("submit",function(e){
+document.getElementById("form").addEventListener("submit",(e)=>{
 
 e.preventDefault();
 
-const nome=document.getElementById("nome").value;
-const telefone=document.getElementById("telefone").value;
-const presenca=document.getElementById("presenca").value;
-const nomeAcompanhante=document.getElementById("nomeAcompanhante").value;
+const dados={
 
-const nomesFilhos=[...document.querySelectorAll(".filhoNome")].map(e=>e.value);
-const idadesFilhos=[...document.querySelectorAll(".filhoIdade")].map(e=>e.value);
+nome:document.getElementById("nome").value,
+telefone:document.getElementById("telefone").value,
+presenca:document.getElementById("presenca").value,
+acompanhante:document.getElementById("nomeAcompanhante").value,
+filhos:[...document.querySelectorAll(".filhoNome")].map(e=>e.value).join(", "),
+idades:[...document.querySelectorAll(".filhoIdade")].map(e=>e.value).join(", ")
+
+};
 
 fetch(SCRIPT_URL,{
 method:"POST",
-mode:"no-cors",
 headers:{"Content-Type":"application/json"},
-body:JSON.stringify({
-nome,
-telefone,
-presenca,
-nomeAcompanhante,
-nomesFilhos,
-idadesFilhos
-})
+body:JSON.stringify(dados)
 });
 
 document.getElementById("msg").classList.remove("hidden");
+
+document.getElementById("form").reset();
+
+listaFilhos.innerHTML="";
+contadorFilhos=0;
+
+areaAcompanhante.classList.add("hidden");
+areaFilhos.classList.add("hidden");
 
 });
 
 const eventDate=new Date("Oct 31, 2026 12:00:00").getTime();
 
-setInterval(function(){
+setInterval(()=>{
 
 const now=new Date().getTime();
 const distance=eventDate-now;
