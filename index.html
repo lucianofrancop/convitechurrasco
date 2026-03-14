@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Churrasqueada Luciano - 30 anos</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#fafafa;
+color:#333;
+}
+
+section{
+max-width:900px;
+margin:auto;
+padding:60px 20px;
+}
+
+.hero{
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url('https://images.unsplash.com/photo-1529692236671-f1dc1b8e84f3');
+background-size:cover;
+background-position:center;
+color:white;
+text-align:center;
+padding:140px 20px;
+}
+
+.hero h1{
+font-size:48px;
+margin:0;
+}
+
+.btn{
+margin-top:25px;
+display:inline-block;
+background:#ff4d4d;
+color:white;
+padding:14px 28px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+}
+
+.card{
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+h2{
+text-align:center;
+margin-bottom:25px;
+}
+
+form{
+display:flex;
+flex-direction:column;
+gap:14px;
+}
+
+input,select{
+padding:12px;
+border-radius:8px;
+border:1px solid #ddd;
+font-size:15px;
+}
+
+button{
+background:#e63946;
+color:white;
+border:none;
+padding:14px;
+border-radius:8px;
+font-size:16px;
+cursor:pointer;
+}
+
+.hidden{
+display:none;
+}
+
+.success{
+margin-top:20px;
+background:#d4edda;
+padding:20px;
+border-radius:8px;
+text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+
+<h1>🔥 Churrasqueada 🔥<br>Luciano 30 anos</h1>
+
+<p>31 de Outubro 2026</p>
+
+<a href="#rsvp" class="btn">Confirmar presença</a>
+
+</section>
+
+
+<section id="rsvp">
+
+<div class="card">
+
+<h2>Confirmação de presença</h2>
+
+<form id="form">
+
+<input id="nome" type="text" placeholder="Seu nome" required>
+
+<input id="telefone" type="tel" placeholder="Telefone / WhatsApp" required>
+
+
+<label>Você irá comparecer?</label>
+
+<select id="presenca" required>
+<option value="">Selecione</option>
+<option>Sim</option>
+<option>Não</option>
+</select>
+
+
+<label>Vai levar acompanhante?</label>
+
+<select id="acompanhante">
+<option value="">Selecione</option>
+<option value="sim">Sim</option>
+<option value="nao">Não</option>
+</select>
+
+<div id="areaAcompanhante" class="hidden">
+
+<input id="nomeAcompanhante" type="text" placeholder="Nome do acompanhante">
+
+</div>
+
+
+<label>Vai levar filhos?</label>
+
+<select id="temFilhos">
+<option value="">Selecione</option>
+<option value="sim">Sim</option>
+<option value="nao">Não</option>
+</select>
+
+<div id="areaFilhos" class="hidden">
+
+<input id="nomeFilho1" type="text" placeholder="Nome do filho">
+
+<input id="idadeFilho1" type="number" placeholder="Idade do filho">
+
+</div>
+
+<button type="submit">Confirmar presença</button>
+
+</form>
+
+<div id="msg" class="success hidden">
+🎉 Presença confirmada! Obrigado.
+</div>
+
+</div>
+
+</section>
+
+
+<script>
+
+const SCRIPT_URL="https://script.google.com/macros/s/AKfycbwG__uWPet6h2wJrIFCn1EPNybgqeQF5gQutDr5HTQrtRlwm637qWa3psvpodoXnLz50g/exec";
+
+
+const acompanhante = document.getElementById("acompanhante");
+const areaAcompanhante = document.getElementById("areaAcompanhante");
+
+acompanhante.addEventListener("change",function(){
+
+if(this.value==="sim"){
+areaAcompanhante.classList.remove("hidden");
+}else{
+areaAcompanhante.classList.add("hidden");
+}
+
+});
+
+
+const temFilhos = document.getElementById("temFilhos");
+const areaFilhos = document.getElementById("areaFilhos");
+
+temFilhos.addEventListener("change",function(){
+
+if(this.value==="sim"){
+areaFilhos.classList.remove("hidden");
+}else{
+areaFilhos.classList.add("hidden");
+}
+
+});
+
+
+document.getElementById("form").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+const nome=document.getElementById("nome").value;
+const telefone=document.getElementById("telefone").value;
+const presenca=document.getElementById("presenca").value;
+
+const nomeAcompanhante=document.getElementById("nomeAcompanhante").value;
+
+const nomeFilho1=document.getElementById("nomeFilho1").value;
+const idadeFilho1=document.getElementById("idadeFilho1").value;
+
+fetch(SCRIPT_URL,{
+method:"POST",
+mode:"no-cors",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+nome,
+telefone,
+presenca,
+nomeAcompanhante,
+nomeFilho1,
+idadeFilho1
+})
+});
+
+document.getElementById("msg").classList.remove("hidden");
+
+
+setTimeout(function(){
+
+window.open("https://wa.me/?text=Acabei%20de%20confirmar%20presen%C3%A7a%20no%20churrasco%20de%2030%20anos%20do%20Luciano!");
+
+},1000);
+
+});
+
+</script>
+
+</body>
+</html>
