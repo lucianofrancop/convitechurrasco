@@ -30,6 +30,7 @@ padding:140px 20px
 }
 
 .hero h1{font-size:50px;margin:0}
+
 .hero p{font-size:20px}
 
 .btn{
@@ -161,11 +162,14 @@ padding:30px
 <p style="text-align:center">
 
 Estou chegando aos 30 anos e quero comemorar com um churrasco especial.
-<br><br>
-Prepare-se para um dia com muita comida boa, risadas e celebração.
+
 <br><br>
 
-<strong>A fumaceira já começou, a carne tá no ponto e o sucesso é garantido: cada um traz sua bebida e a festa fica completa! 🍺</strong>
+Prepare-se para um dia com muita comida boa, risadas e celebração.
+
+<br><br>
+
+<strong>A fumaceira já começou, a carne tá no ponto e o sucesso é garantido: cada um traz sua bebida! 🍺</strong>
 
 </p>
 
@@ -203,60 +207,6 @@ allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-pictur
 
 </section>
 
-<section>
-
-<h2>📅 Informações</h2>
-
-<div class="info-grid">
-
-<div class="info-box">
-<h3>📅 Data</h3>
-<p>31 de Outubro 2026</p>
-</div>
-
-<div class="info-box">
-<h3>⏰ Horário</h3>
-<p>A partir das 12h</p>
-</div>
-
-<div class="info-box">
-<h3>📍 Local</h3>
-<p>Clube dos Bancários<br>Ituiutaba/MG</p>
-</div>
-
-<div class="info-box">
-<h3>🍖 Tema</h3>
-<p>Churrasco</p>
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<h2>📍 Local</h2>
-
-<div class="map">
-<iframe src="https://www.google.com/maps?q=Clube+dos+Banc%C3%A1rios+de+Ituiutaba&output=embed"></iframe>
-</div>
-
-<div style="text-align:center;margin-top:20px">
-
-<a href="https://www.google.com/maps/dir/?api=1&destination=-18.9672765,-49.4747441" target="_blank">
-
-<button style="background:#4285F4">
-
-Abrir rota no Google Maps
-
-</button>
-
-</a>
-
-</div>
-
-</section>
-
 <section id="rsvp">
 
 <div class="card">
@@ -265,8 +215,9 @@ Abrir rota no Google Maps
 
 <form id="form">
 
-<input id="nome" type="text" placeholder="Seu nome" required>
-<input id="telefone" type="tel" placeholder="Telefone / WhatsApp" required>
+<input id="nome" placeholder="Seu nome" required>
+
+<input id="telefone" placeholder="Telefone / WhatsApp" required>
 
 <label>Você irá comparecer?</label>
 
@@ -285,7 +236,7 @@ Abrir rota no Google Maps
 </select>
 
 <div id="areaAcompanhante" class="hidden">
-<input id="nomeAcompanhante" type="text" placeholder="Nome do acompanhante">
+<input id="nomeAcompanhante" placeholder="Nome do acompanhante">
 </div>
 
 <label>Vai levar filhos?</label>
@@ -300,7 +251,7 @@ Abrir rota no Google Maps
 
 <div id="listaFilhos"></div>
 
-<button type="button" id="addFilho">Adicionar outro filho</button>
+<button type="button" id="addFilho">Adicionar filho</button>
 
 </div>
 
@@ -309,7 +260,7 @@ Abrir rota no Google Maps
 </form>
 
 <div id="msg" class="success hidden">
-🎉 Presença confirmada! Obrigado por responder.
+🎉 Presença confirmada!
 </div>
 
 </div>
@@ -382,7 +333,7 @@ listaFilhos.appendChild(div);
 
 document.getElementById("addFilho").addEventListener("click",addFilho);
 
-document.getElementById("form").addEventListener("submit",(e)=>{
+document.getElementById("form").addEventListener("submit",async(e)=>{
 
 e.preventDefault();
 
@@ -397,8 +348,11 @@ idades:[...document.querySelectorAll(".filhoIdade")].map(e=>e.value).join(", ")
 
 };
 
-fetch(SCRIPT_URL,{
+try{
+
+await fetch(SCRIPT_URL,{
 method:"POST",
+mode:"no-cors",
 headers:{"Content-Type":"application/json"},
 body:JSON.stringify(dados)
 });
@@ -410,8 +364,14 @@ document.getElementById("form").reset();
 listaFilhos.innerHTML="";
 contadorFilhos=0;
 
-areaAcompanhante.classList.add("hidden");
 areaFilhos.classList.add("hidden");
+areaAcompanhante.classList.add("hidden");
+
+}catch(err){
+
+alert("Erro ao enviar confirmação.");
+
+}
 
 });
 
