@@ -275,7 +275,7 @@ allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-pictur
 
 <script>
 
-const SCRIPT_URL="https://script.google.com/macros/s/AKfycbz6OA2-nh7QnmQhybifrP182LO1OCMea6BMYpKXG089x93PQYh6-08H9GpzYHXN4okC5w/exec";
+const SCRIPT_URL="https://script.google.com/macros/s/AKfycbxP77WFbyVRAwMl7uaVpV0q8gBmeXE8D9r2XXQesPqMUEjkeD0U9C5GCyjJKpg9ScBaUQ/exec";
 
 const acompanhante=document.getElementById("acompanhante");
 const areaAcompanhante=document.getElementById("areaAcompanhante");
@@ -352,7 +352,6 @@ try{
 
 await fetch(SCRIPT_URL,{
 method:"POST",
-mode:"no-cors",
 headers:{"Content-Type":"application/json"},
 body:JSON.stringify(dados)
 });
