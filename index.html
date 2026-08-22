@@ -2,7 +2,6 @@
 <html lang="pt-BR">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,710 +12,622 @@
 <style>
 
 /* =========================
-GERAL
+   CONFIGURAÇÕES GERAIS
 ========================= */
 
 *{
-box-sizing:border-box;
+    box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-margin:0;
-font-family:'Poppins',sans-serif;
+    margin:0;
+    font-family:'Poppins',sans-serif;
 
-/* FUNDO DO SITE */
-background:
-linear-gradient(
-rgba(15,8,3,.88),
-rgba(15,8,3,.88)
-),
-url('banner.png');
+    background:
+        linear-gradient(
+            rgba(15,8,3,.88),
+            rgba(15,8,3,.88)
+        ),
+        url('banner.png');
 
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-background-attachment:fixed;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
 
-color:#333;
+    color:#333;
 }
 
 
 /* =========================
-BANNER PRINCIPAL
+   BANNER
 ========================= */
 
 .hero{
 
-background-image:url('banner.png');
+    background-image:url('banner.png');
 
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 
-min-height:650px;
+    min-height:650px;
 
-display:flex;
-align-items:flex-end;
-justify-content:center;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
 
-text-align:center;
+    text-align:center;
 
-padding:40px 20px 55px;
+    padding:40px 20px 55px;
 
-position:relative;
-
+    position:relative;
 }
 
-/* ESCURECIMENTO SUAVE NA PARTE DE BAIXO */
 
 .hero::after{
 
-content:"";
+    content:"";
 
-position:absolute;
+    position:absolute;
 
-top:0;
-left:0;
-right:0;
-bottom:0;
+    inset:0;
 
-background:
-linear-gradient(
-to bottom,
-rgba(0,0,0,0) 45%,
-rgba(0,0,0,.15) 65%,
-rgba(0,0,0,.85) 100%
-);
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0) 45%,
+            rgba(0,0,0,.15) 65%,
+            rgba(0,0,0,.85) 100%
+        );
 
-pointer-events:none;
-
+    pointer-events:none;
 }
 
-
-/* CONTEÚDO DO BANNER */
 
 .hero-content{
 
-position:relative;
+    position:relative;
 
-z-index:2;
-
+    z-index:2;
 }
 
-
-/* DATA */
 
 .hero-date{
 
-color:white;
+    color:white;
 
-font-size:21px;
+    font-size:21px;
 
-font-weight:600;
+    font-weight:600;
 
-margin-bottom:20px;
+    margin-bottom:20px;
 
-text-shadow:
-0 3px 10px black;
-
+    text-shadow:0 3px 10px black;
 }
 
-
-/* BOTÃO PRINCIPAL */
 
 .btn{
 
-display:inline-block;
+    display:inline-block;
 
-background:#d7442e;
+    background:#d7442e;
 
-color:white;
+    color:white;
 
-padding:15px 32px;
+    padding:15px 32px;
 
-border-radius:30px;
+    border-radius:30px;
 
-text-decoration:none;
+    text-decoration:none;
 
-font-weight:600;
+    font-weight:600;
 
-box-shadow:
-0 8px 25px rgba(0,0,0,.5);
+    box-shadow:0 8px 25px rgba(0,0,0,.5);
 
-transition:.3s;
-
+    transition:.3s;
 }
+
 
 .btn:hover{
 
-background:#b73223;
+    background:#b73223;
 
-transform:translateY(-3px);
-
+    transform:translateY(-3px);
 }
 
 
 /* =========================
-SEÇÕES
+   SEÇÕES
 ========================= */
 
 section{
 
-max-width:1050px;
+    max-width:1050px;
 
-margin:auto;
+    margin:auto;
 
-padding:60px 20px;
-
+    padding:60px 20px;
 }
 
 
-/* TÍTULOS */
-
 h2{
 
-text-align:center;
+    text-align:center;
 
-color:white;
+    color:white;
 
-margin-bottom:30px;
+    margin-bottom:30px;
 
-text-shadow:
-0 3px 10px rgba(0,0,0,.9);
-
+    text-shadow:0 3px 10px rgba(0,0,0,.9);
 }
 
 
 /* =========================
-CARDS
+   CARDS
 ========================= */
 
 .card{
 
-background:
-rgba(255,255,255,.95);
+    background:rgba(255,255,255,.95);
 
-padding:40px;
+    padding:40px;
 
-border-radius:18px;
+    border-radius:18px;
 
-box-shadow:
-0 15px 40px rgba(0,0,0,.40);
+    box-shadow:0 15px 40px rgba(0,0,0,.40);
 
-backdrop-filter:
-blur(5px);
-
+    backdrop-filter:blur(5px);
 }
 
-
-/* TÍTULO DENTRO DOS CARDS */
 
 .card h2{
 
-color:#382216;
+    color:#382216;
 
-text-shadow:none;
-
+    text-shadow:none;
 }
 
 
 /* =========================
-SOBRE
-========================= */
-
-.sobre-texto{
-
-text-align:center;
-
-line-height:1.8;
-
-font-size:16px;
-
-}
-
-
-/* =========================
-LOGO
+   LOGO
 ========================= */
 
 .logo-area{
 
-text-align:center;
+    text-align:center;
 
-margin-bottom:25px;
-
+    margin-bottom:20px;
 }
+
 
 .logo-area img{
 
-max-width:220px;
+    max-width:230px;
 
-width:70%;
+    width:70%;
 
-height:auto;
-
+    height:auto;
 }
 
 
 /* =========================
-PLAYLIST
+   TEXTO
+========================= */
+
+.sobre-texto{
+
+    text-align:center;
+
+    line-height:1.9;
+
+    font-size:16px;
+}
+
+
+/* =========================
+   SPOTIFY
 ========================= */
 
 .spotify-frame{
 
-width:100%;
+    width:100%;
 
-height:352px;
+    height:352px;
 
-border:0;
+    border:0;
 
-border-radius:15px;
-
+    border-radius:15px;
 }
 
 
 /* =========================
-CONTAGEM REGRESSIVA
+   CONTAGEM REGRESSIVA
 ========================= */
 
 .countdown{
 
-display:grid;
+    display:grid;
 
-grid-template-columns:
-repeat(4,1fr);
+    grid-template-columns:repeat(4,1fr);
 
-gap:20px;
+    gap:20px;
 
-text-align:center;
-
+    text-align:center;
 }
 
 
 .countdown div{
 
-background:
-rgba(255,255,255,.95);
+    background:rgba(255,255,255,.95);
 
-padding:25px 15px;
+    padding:25px 15px;
 
-border-radius:16px;
+    border-radius:16px;
 
-box-shadow:
-0 10px 30px rgba(0,0,0,.4);
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
 
-font-weight:600;
-
+    font-weight:600;
 }
 
 
 .countdown span{
 
-display:block;
+    display:block;
 
-font-size:36px;
+    font-size:36px;
 
-font-weight:700;
+    font-weight:700;
 
-color:#c93d29;
+    color:#c93d29;
 
-margin-bottom:5px;
-
+    margin-bottom:5px;
 }
 
 
 /* =========================
-INFORMAÇÕES
+   INFORMAÇÕES
 ========================= */
 
 .info-grid{
 
-display:grid;
+    display:grid;
 
-grid-template-columns:
-repeat(auto-fit,minmax(200px,1fr));
+    grid-template-columns:
+        repeat(auto-fit,minmax(200px,1fr));
 
-gap:20px;
-
+    gap:20px;
 }
 
 
 .info-box{
 
-background:
-rgba(255,255,255,.95);
+    background:rgba(255,255,255,.95);
 
-padding:28px 20px;
+    padding:28px 20px;
 
-border-radius:16px;
+    border-radius:16px;
 
-box-shadow:
-0 10px 30px rgba(0,0,0,.4);
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
 
-text-align:center;
-
+    text-align:center;
 }
 
 
 .info-box h3{
 
-margin-top:0;
+    margin-top:0;
 
-color:#3a2417;
-
+    color:#3a2417;
 }
 
 
 /* =========================
-MAPA
+   MAPA
 ========================= */
 
 .map iframe{
 
-width:100%;
+    width:100%;
 
-height:350px;
+    height:350px;
 
-border:none;
+    border:none;
 
-border-radius:15px;
-
+    border-radius:15px;
 }
 
 
 .route-area{
 
-text-align:center;
+    text-align:center;
 
-margin-top:20px;
-
+    margin-top:20px;
 }
 
 
 .route-btn{
 
-display:inline-block;
+    display:inline-block;
 
-background:#4285F4;
+    background:#4285F4;
 
-color:white;
+    color:white;
 
-padding:14px 28px;
+    padding:14px 28px;
 
-border-radius:30px;
+    border-radius:30px;
 
-text-decoration:none;
+    text-decoration:none;
 
-font-weight:600;
+    font-weight:600;
 
-box-shadow:
-0 8px 20px rgba(0,0,0,.3);
+    box-shadow:0 8px 20px rgba(0,0,0,.3);
 
-transition:.3s;
-
+    transition:.3s;
 }
 
 
 .route-btn:hover{
 
-transform:translateY(-2px);
-
+    transform:translateY(-2px);
 }
 
 
 /* =========================
-FORMULÁRIO
+   FORMULÁRIO
 ========================= */
 
 form{
 
-display:flex;
+    display:flex;
 
-flex-direction:column;
+    flex-direction:column;
 
-gap:15px;
-
+    gap:15px;
 }
 
 
 label{
 
-font-weight:500;
+    font-weight:500;
 
-color:#3a2417;
-
+    color:#3a2417;
 }
 
 
 input,
 select{
 
-width:100%;
+    width:100%;
 
-padding:14px;
+    padding:14px;
 
-border-radius:10px;
+    border-radius:10px;
 
-border:
-1px solid #ccc;
+    border:1px solid #ccc;
 
-font-family:
-'Poppins',
-sans-serif;
+    font-family:'Poppins',sans-serif;
 
-font-size:15px;
+    font-size:15px;
 
-background:white;
-
+    background:white;
 }
 
 
 input:focus,
 select:focus{
 
-outline:none;
+    outline:none;
 
-border-color:#d7442e;
+    border-color:#d7442e;
 
-box-shadow:
-0 0 0 3px rgba(215,68,46,.15);
-
+    box-shadow:
+        0 0 0 3px rgba(215,68,46,.15);
 }
 
 
-/* BOTÃO CONFIRMAR */
-
 .submit-btn{
 
-background:#d7442e;
+    background:#d7442e;
 
-color:white;
+    color:white;
 
-border:none;
+    border:none;
 
-padding:16px;
+    padding:16px;
 
-border-radius:10px;
+    border-radius:10px;
 
-font-size:17px;
+    font-size:17px;
 
-font-weight:600;
+    font-family:'Poppins',sans-serif;
 
-cursor:pointer;
+    font-weight:600;
 
-margin-top:10px;
+    cursor:pointer;
 
-transition:.3s;
+    margin-top:10px;
 
+    transition:.3s;
 }
 
 
 .submit-btn:hover{
 
-background:#b73223;
-
+    background:#b73223;
 }
 
 
 .submit-btn:disabled{
 
-opacity:.7;
+    opacity:.6;
 
-cursor:not-allowed;
-
+    cursor:not-allowed;
 }
 
 
 /* =========================
-ACOMPANHANTE / FILHOS
+   FILHOS
 ========================= */
 
 .hidden{
 
-display:none;
-
+    display:none !important;
 }
 
 
 .child-box{
 
-background:#f8f2ed;
+    background:#f8f2ed;
 
-border:
-1px solid #eadbd0;
+    border:1px solid #eadbd0;
 
-padding:15px;
+    padding:15px;
 
-border-radius:10px;
+    border-radius:10px;
 
-margin-bottom:12px;
-
+    margin-bottom:12px;
 }
 
 
 .child-box input{
 
-margin-bottom:10px;
-
+    margin-bottom:10px;
 }
 
 
 .add-child-btn{
 
-background:#5a3b29;
+    background:#5a3b29;
 
-color:white;
+    color:white;
 
-border:none;
+    border:none;
 
-padding:12px 18px;
+    padding:12px 18px;
 
-border-radius:8px;
+    border-radius:8px;
 
-font-family:'Poppins',sans-serif;
+    font-family:'Poppins',sans-serif;
 
-font-size:14px;
+    font-size:14px;
 
-cursor:pointer;
-
+    cursor:pointer;
 }
 
 
 /* =========================
-MENSAGENS
+   MENSAGEM
 ========================= */
 
 .success{
 
-margin-top:20px;
+    margin-top:20px;
 
-background:#d7f1df;
+    background:#d7f1df;
 
-color:#245e36;
+    color:#245e36;
 
-padding:18px;
+    padding:20px;
 
-border-radius:10px;
+    border-radius:10px;
 
-text-align:center;
+    text-align:center;
 
-font-weight:500;
-
-}
-
-
-.error{
-
-margin-top:20px;
-
-background:#f8d7da;
-
-color:#842029;
-
-padding:18px;
-
-border-radius:10px;
-
-text-align:center;
-
+    font-weight:500;
 }
 
 
 /* =========================
-RODAPÉ
+   RODAPÉ
 ========================= */
 
 footer{
 
-background:
-rgba(10,5,2,.96);
+    background:rgba(10,5,2,.96);
 
-color:white;
+    color:white;
 
-text-align:center;
+    text-align:center;
 
-padding:35px 20px;
-
+    padding:35px 20px;
 }
 
 
 /* =========================
-CELULAR
+   CELULAR
 ========================= */
 
 @media(max-width:768px){
 
-.hero{
+    .hero{
 
-min-height:480px;
+        min-height:480px;
 
-background-position:center;
+        background-position:center;
+    }
+
+
+    section{
+
+        padding:45px 16px;
+    }
+
+
+    .card{
+
+        padding:28px 20px;
+    }
+
+
+    .countdown{
+
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+
+    .logo-area img{
+
+        max-width:180px;
+    }
 
 }
 
-section{
-
-padding:45px 16px;
-
-}
-
-.card{
-
-padding:28px 20px;
-
-}
-
-.countdown{
-
-grid-template-columns:
-repeat(2,1fr);
-
-}
-
-.logo-area img{
-
-max-width:180px;
-
-}
-
-}
-
-
-/* CELULARES PEQUENOS */
 
 @media(max-width:480px){
 
-.hero{
+    .hero{
 
-min-height:350px;
+        min-height:350px;
 
-padding-bottom:30px;
+        padding-bottom:30px;
+    }
 
-}
 
-.hero-date{
+    .hero-date{
 
-font-size:16px;
+        font-size:16px;
+    }
 
-}
 
-.btn{
+    .btn{
 
-padding:13px 22px;
+        padding:13px 22px;
 
-font-size:14px;
+        font-size:14px;
+    }
 
-}
 
-.countdown span{
+    .countdown span{
 
-font-size:29px;
-
-}
+        font-size:29px;
+    }
 
 }
 
@@ -728,86 +639,88 @@ font-size:29px;
 <body>
 
 
-<!-- =====================================
-BANNER
-===================================== -->
+<!-- =========================
+     BANNER
+========================= -->
 
 <section class="hero">
 
-<div class="hero-content">
+    <div class="hero-content">
 
-<div class="hero-date">
+        <div class="hero-date">
 
-31 de Outubro de 2026 • Ituiutaba/MG
+            31 de Outubro de 2026 • Ituiutaba/MG
 
-</div>
+        </div>
 
 
-<a
-href="#rsvp"
-class="btn">
+        <a
+        href="#rsvp"
+        class="btn">
 
-🔥 Confirmar presença
+            🔥 Confirmar presença
 
-</a>
+        </a>
 
-</div>
+    </div>
 
 </section>
 
 
 
-<!-- =====================================
-SOBRE O EVENTO
-===================================== -->
+<!-- =========================
+     SOBRE
+========================= -->
 
 <section>
 
 <div class="card">
 
 
-<!-- LOGO -->
+    <div class="logo-area">
 
-<div class="logo-area">
+        <img
+        src="logo.png"
+        alt="Churrasqueada do Luciano">
 
-<img
-src="logo.png"
-alt="Churrasqueada do Luciano">
-
-</div>
+    </div>
 
 
-<h2>
-🍖 Sobre o evento
-</h2>
+    <h2>
+
+        🍖 Sobre o evento
+
+    </h2>
 
 
-<p class="sobre-texto">
+    <p class="sobre-texto">
 
-Estou chegando aos
-<strong>30 anos</strong>
-e quero comemorar com um churrasco especial!
+        Estou chegando aos
 
-<br><br>
+        <strong>30 anos</strong>
 
-Prepare-se para um dia com muita comida boa,
-risadas e celebração.
+        e quero comemorar com um churrasco especial!
 
-<br><br>
+        <br><br>
 
-<strong>
+        Prepare-se para um dia com muita comida boa,
+        risadas e celebração.
 
-🔥 A fumaceira já começou,
-a carne tá no ponto e o sucesso é garantido!
+        <br><br>
 
-<br>
+        <strong>
 
-Cada um traz sua bebida
-e a festa fica completa! 🍺🍺
+            🔥 A fumaceira já começou,
+            a carne tá no ponto e o sucesso é garantido!
 
-</strong>
+            <br><br>
 
-</p>
+            Cada um traz sua bebida
+            e a festa fica completa! 🍺🍺
+
+        </strong>
+
+    </p>
 
 </div>
 
@@ -815,28 +728,28 @@ e a festa fica completa! 🍺🍺
 
 
 
-<!-- =====================================
-PLAYLIST
-===================================== -->
+<!-- =========================
+     PLAYLIST
+========================= -->
 
 <section>
 
 <h2>
-🎵 Playlist da Churrasqueada
+
+    🎵 Playlist da Churrasqueada
+
 </h2>
 
 
 <div class="card">
 
-
-<iframe
-class="spotify-frame"
-src="https://open.spotify.com/embed/playlist/6RY36kCgxXnqZ1jgOyliWu?utm_source=generator"
-allowfullscreen
-allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-loading="lazy">
-</iframe>
-
+    <iframe
+    class="spotify-frame"
+    src="https://open.spotify.com/embed/playlist/6RY36kCgxXnqZ1jgOyliWu?utm_source=generator"
+    allowfullscreen
+    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+    loading="lazy">
+    </iframe>
 
 </div>
 
@@ -844,63 +757,55 @@ loading="lazy">
 
 
 
-<!-- =====================================
-CONTAGEM REGRESSIVA
-===================================== -->
+<!-- =========================
+     CONTAGEM REGRESSIVA
+========================= -->
 
 <section>
 
 <h2>
-⏳ Falta pouco!
+
+    ⏳ Falta pouco!
+
 </h2>
 
 
 <div class="countdown">
 
+    <div>
 
-<div>
+        <span id="dias">0</span>
 
-<span id="dias">
-0
-</span>
+        Dias
 
-Dias
-
-</div>
+    </div>
 
 
-<div>
+    <div>
 
-<span id="horas">
-0
-</span>
+        <span id="horas">0</span>
 
-Horas
+        Horas
 
-</div>
+    </div>
 
 
-<div>
+    <div>
 
-<span id="minutos">
-0
-</span>
+        <span id="minutos">0</span>
 
-Minutos
+        Minutos
 
-</div>
+    </div>
 
 
-<div>
+    <div>
 
-<span id="segundos">
-0
-</span>
+        <span id="segundos">0</span>
 
-Segundos
+        Segundos
 
-</div>
-
+    </div>
 
 </div>
 
@@ -908,101 +813,91 @@ Segundos
 
 
 
-<!-- =====================================
-INFORMAÇÕES
-===================================== -->
+<!-- =========================
+     INFORMAÇÕES
+========================= -->
 
 <section>
 
 <h2>
-📅 Informações da festa
+
+    📅 Informações da festa
+
 </h2>
 
 
 <div class="info-grid">
 
 
-<div class="info-box">
+    <div class="info-box">
 
-<h3>
-📅 Data
-</h3>
+        <h3>📅 Data</h3>
 
-<p>
+        <p>
 
-31 de Outubro<br>
+            31 de Outubro
 
-<strong>
-2026
-</strong>
+            <br>
 
-</p>
+            <strong>2026</strong>
 
-</div>
+        </p>
+
+    </div>
 
 
 
-<div class="info-box">
+    <div class="info-box">
 
-<h3>
-⏰ Horário
-</h3>
+        <h3>⏰ Horário</h3>
 
-<p>
+        <p>
 
-A partir das
+            A partir das
 
-<br>
+            <br>
 
-<strong>
-12h
-</strong>
+            <strong>12h</strong>
 
-</p>
+        </p>
 
-</div>
+    </div>
 
 
 
-<div class="info-box">
+    <div class="info-box">
 
-<h3>
-📍 Local
-</h3>
+        <h3>📍 Local</h3>
 
-<p>
+        <p>
 
-Clube dos Bancários
+            Clube dos Bancários
 
-<br>
+            <br>
 
-Ituiutaba/MG
+            Ituiutaba/MG
 
-</p>
+        </p>
 
-</div>
+    </div>
 
 
 
-<div class="info-box">
+    <div class="info-box">
 
-<h3>
-🍖 Evento
-</h3>
+        <h3>🍖 Evento</h3>
 
-<p>
+        <p>
 
-<strong>
-Churrasqueada
-</strong>
+            <strong>Churrasqueada</strong>
 
-<br>
+            <br>
 
-Luciano 30 anos
+            Luciano 30 anos
 
-</p>
+        </p>
 
-</div>
+    </div>
 
 
 </div>
@@ -1011,45 +906,46 @@ Luciano 30 anos
 
 
 
-<!-- =====================================
-LOCAL
-===================================== -->
+<!-- =========================
+     LOCAL
+========================= -->
 
 <section>
 
 <h2>
-📍 Local da Churrasqueada
+
+    📍 Local da Churrasqueada
+
 </h2>
 
 
 <div class="card">
 
 
-<div class="map">
+    <div class="map">
 
-<iframe
-src="https://www.google.com/maps?q=Clube+dos+Banc%C3%A1rios+de+Ituiutaba&output=embed"
-loading="lazy">
-</iframe>
+        <iframe
+        src="https://www.google.com/maps?q=Clube+dos+Banc%C3%A1rios+de+Ituiutaba&output=embed"
+        loading="lazy">
+        </iframe>
 
-</div>
-
-
-<div class="route-area">
+    </div>
 
 
-<a
-class="route-btn"
-href="https://www.google.com/maps/dir/?api=1&destination=-18.9672765,-49.4747441"
-target="_blank"
-rel="noopener noreferrer">
+    <div class="route-area">
 
-📍 Abrir rota no Google Maps
+        <a
+        class="route-btn"
+        href="https://www.google.com/maps/dir/?api=1&destination=-18.9672765,-49.4747441"
+        target="_blank"
+        rel="noopener noreferrer">
 
-</a>
+            📍 Abrir rota no Google Maps
 
+        </a>
 
-</div>
+    </div>
+
 
 </div>
 
@@ -1057,9 +953,9 @@ rel="noopener noreferrer">
 
 
 
-<!-- =====================================
-CONFIRMAÇÃO
-===================================== -->
+<!-- =========================
+     CONFIRMAÇÃO
+========================= -->
 
 <section id="rsvp">
 
@@ -1067,150 +963,179 @@ CONFIRMAÇÃO
 
 
 <h2>
-✅ Confirme sua presença
+
+    ✅ Confirme sua presença
+
 </h2>
 
 
 <form id="form">
 
 
-<input
-id="nome"
-type="text"
-placeholder="Seu nome"
-required>
+    <input
+    id="nome"
+    type="text"
+    placeholder="Seu nome"
+    required>
 
 
 
-<input
-id="telefone"
-type="tel"
-placeholder="Telefone / WhatsApp"
-required>
+    <input
+    id="telefone"
+    type="tel"
+    placeholder="Telefone / WhatsApp"
+    required>
 
 
 
-<label for="presenca">
+    <label for="presenca">
 
-Você irá comparecer?
+        Você irá comparecer?
 
-</label>
-
-
-<select
-id="presenca"
-required>
-
-<option value="">
-Selecione
-</option>
-
-<option value="Sim">
-Sim
-</option>
-
-<option value="Não">
-Não
-</option>
-
-</select>
+    </label>
 
 
+    <select
+    id="presenca"
+    required>
 
-<label for="acompanhante">
+        <option value="">
 
-Vai levar acompanhante?
+            Selecione
 
-</label>
+        </option>
 
+        <option value="Sim">
 
-<select id="acompanhante">
+            Sim
 
-<option value="">
-Selecione
-</option>
+        </option>
 
-<option value="sim">
-Sim
-</option>
+        <option value="Não">
 
-<option value="nao">
-Não
-</option>
+            Não
 
-</select>
+        </option>
+
+    </select>
 
 
 
-<div
-id="areaAcompanhante"
-class="hidden">
+    <!-- CAMPOS EXTRAS -->
 
-<input
-id="nomeAcompanhante"
-type="text"
-placeholder="Nome do acompanhante">
-
-</div>
+    <div
+    id="areaConvidados"
+    class="hidden">
 
 
+        <label for="acompanhante">
 
-<label for="temFilhos">
+            Vai levar acompanhante?
 
-Vai levar filhos?
-
-</label>
-
-
-<select id="temFilhos">
-
-<option value="">
-Selecione
-</option>
-
-<option value="sim">
-Sim
-</option>
-
-<option value="nao">
-Não
-</option>
-
-</select>
+        </label>
 
 
+        <select id="acompanhante">
 
-<div
-id="areaFilhos"
-class="hidden">
+            <option value="">
 
+                Selecione
 
-<div id="listaFilhos">
-</div>
+            </option>
 
+            <option value="sim">
 
-<button
-type="button"
-id="addFilho"
-class="add-child-btn">
+                Sim
 
-+ Adicionar outro filho
+            </option>
 
-</button>
+            <option value="nao">
 
+                Não
 
-</div>
+            </option>
+
+        </select>
 
 
 
-<button
-type="submit"
-id="submitBtn"
-class="submit-btn">
+        <div
+        id="areaAcompanhante"
+        class="hidden">
 
-🔥 Confirmar presença
+            <input
+            id="nomeAcompanhante"
+            type="text"
+            placeholder="Nome do acompanhante">
 
-</button>
+        </div>
+
+
+
+        <label for="temFilhos">
+
+            Vai levar filhos?
+
+        </label>
+
+
+        <select id="temFilhos">
+
+            <option value="">
+
+                Selecione
+
+            </option>
+
+            <option value="sim">
+
+                Sim
+
+            </option>
+
+            <option value="nao">
+
+                Não
+
+            </option>
+
+        </select>
+
+
+
+        <div
+        id="areaFilhos"
+        class="hidden">
+
+
+            <div id="listaFilhos"></div>
+
+
+            <button
+            type="button"
+            id="addFilho"
+            class="add-child-btn">
+
+                + Adicionar outro filho
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <button
+    type="submit"
+    id="submitBtn"
+    class="submit-btn">
+
+        🔥 Confirmar presença
+
+    </button>
 
 
 </form>
@@ -1221,21 +1146,15 @@ class="submit-btn">
 id="msg"
 class="success hidden">
 
-🎉 Presença confirmada!
+    🎉 Resposta enviada com sucesso!
 
-<br>
+    <br><br>
 
-Obrigado por responder. Nos vemos na Churrasqueada! 🔥🍖
+    Obrigado por responder.
 
-</div>
+    <br>
 
-
-<div
-id="erro"
-class="error hidden">
-
-Não foi possível enviar sua confirmação.
-Tente novamente.
+    Nos vemos na Churrasqueada! 🔥🍖
 
 </div>
 
@@ -1245,10 +1164,6 @@ Tente novamente.
 </section>
 
 
-
-<!-- =====================================
-RODAPÉ
-===================================== -->
 
 <footer>
 
@@ -1260,197 +1175,239 @@ RODAPÉ
 
 <script>
 
-/* ==========================================
-GOOGLE APPS SCRIPT
-========================================== */
-
-/*
-IMPORTANTE:
-
-Essa precisa ser a URL terminada em /exec
-da implantação atual do seu Apps Script.
-*/
+/* =================================================
+   URL DO SEU GOOGLE APPS SCRIPT
+================================================= */
 
 const SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbxSKQeMNAwMxTorLwCkfb7DTnVa03b4GgeEc1yKOeuj1hKOxQr7eGkU3oLdqlgrNb96Bw/exec";
+"https://script.google.com/macros/s/AKfycbxTaZ0R2u6V8qFJBAao9itCZjlA2_K-5gUHuUxr90EvfchBGHew083LLDlWvgwQz4oV3Q/exec";
 
 
 
-/* ==========================================
-PRESENÇA
-========================================== */
+/* =================================================
+   ELEMENTOS
+================================================= */
+
+const form =
+document.getElementById("form");
+
 
 const presenca =
 document.getElementById("presenca");
 
+
+const areaConvidados =
+document.getElementById("areaConvidados");
+
+
 const acompanhante =
 document.getElementById("acompanhante");
+
+
+const areaAcompanhante =
+document.getElementById("areaAcompanhante");
+
+
+const nomeAcompanhante =
+document.getElementById("nomeAcompanhante");
+
 
 const temFilhos =
 document.getElementById("temFilhos");
 
 
-/*
-Se marcar NÃO,
-esconde acompanhante e filhos.
-*/
+const areaFilhos =
+document.getElementById("areaFilhos");
+
+
+const listaFilhos =
+document.getElementById("listaFilhos");
+
+
+const submitBtn =
+document.getElementById("submitBtn");
+
+
+const mensagem =
+document.getElementById("msg");
+
+
+let contadorFilhos = 0;
+
+
+
+/* =================================================
+   PRESENÇA
+================================================= */
 
 presenca.addEventListener(
 "change",
 function(){
 
-if(this.value==="Não"){
 
-acompanhante.value="nao";
-
-temFilhos.value="nao";
-
-esconderAcompanhante();
-
-esconderFilhos();
-
-}
-
-}
-
-);
+    if(this.value === "Sim"){
 
 
+        areaConvidados
+        .classList
+        .remove("hidden");
 
-/* ==========================================
-ACOMPANHANTE
-========================================== */
 
-const areaAcompanhante =
-document.getElementById(
-"areaAcompanhante"
-);
+        acompanhante.required = true;
 
-const nomeAcompanhante =
-document.getElementById(
-"nomeAcompanhante"
-);
+        temFilhos.required = true;
 
+
+    }else{
+
+
+        areaConvidados
+        .classList
+        .add("hidden");
+
+
+        acompanhante.required = false;
+
+        temFilhos.required = false;
+
+
+        acompanhante.value = "";
+
+        temFilhos.value = "";
+
+
+        esconderAcompanhante();
+
+        esconderFilhos();
+
+    }
+
+
+});
+
+
+
+/* =================================================
+   ACOMPANHANTE
+================================================= */
 
 acompanhante.addEventListener(
 "change",
 function(){
 
-if(this.value==="sim"){
 
-areaAcompanhante
-.classList
-.remove("hidden");
+    if(this.value === "sim"){
 
-nomeAcompanhante.required=true;
 
-}else{
+        areaAcompanhante
+        .classList
+        .remove("hidden");
 
-esconderAcompanhante();
 
-}
+        nomeAcompanhante.required = true;
 
-}
 
-);
+    }else{
+
+
+        esconderAcompanhante();
+
+    }
+
+
+});
+
 
 
 function esconderAcompanhante(){
 
-areaAcompanhante
-.classList
-.add("hidden");
 
-nomeAcompanhante.value="";
+    areaAcompanhante
+    .classList
+    .add("hidden");
 
-nomeAcompanhante.required=false;
+
+    nomeAcompanhante.value = "";
+
+
+    nomeAcompanhante.required = false;
 
 }
 
 
 
-/* ==========================================
-FILHOS
-========================================== */
-
-const areaFilhos =
-document.getElementById(
-"areaFilhos"
-);
-
-const listaFilhos =
-document.getElementById(
-"listaFilhos"
-);
-
-
-let contadorFilhos=0;
-
+/* =================================================
+   FILHOS
+================================================= */
 
 temFilhos.addEventListener(
 "change",
 function(){
 
-if(this.value==="sim"){
 
-areaFilhos
-.classList
-.remove("hidden");
+    if(this.value === "sim"){
 
 
-if(contadorFilhos===0){
+        areaFilhos
+        .classList
+        .remove("hidden");
 
-adicionarFilho();
 
-}
+        if(contadorFilhos === 0){
 
-}else{
+            adicionarFilho();
 
-esconderFilhos();
+        }
 
-}
 
-}
+    }else{
 
-);
+
+        esconderFilhos();
+
+    }
+
+
+});
 
 
 
 function adicionarFilho(){
 
-contadorFilhos++;
+
+    contadorFilhos++;
 
 
-const div =
-document.createElement("div");
+    const div =
+    document.createElement("div");
 
 
-div.className =
-"child-box";
+    div.className =
+    "child-box";
 
 
-div.innerHTML = `
+    div.innerHTML = `
 
-<input
-type="text"
-class="filhoNome"
-placeholder="Nome do filho ${contadorFilhos}"
-required>
-
-
-<input
-type="number"
-class="filhoIdade"
-placeholder="Idade do filho ${contadorFilhos}"
-min="0"
-max="17"
-required>
-
-`;
+        <input
+        type="text"
+        class="filhoNome"
+        placeholder="Nome do filho ${contadorFilhos}"
+        required>
 
 
-listaFilhos
-.appendChild(div);
+        <input
+        type="number"
+        class="filhoIdade"
+        placeholder="Idade do filho ${contadorFilhos}"
+        min="0"
+        max="17"
+        required>
+
+    `;
+
+
+    listaFilhos
+    .appendChild(div);
 
 }
 
@@ -1458,13 +1415,16 @@ listaFilhos
 
 function esconderFilhos(){
 
-areaFilhos
-.classList
-.add("hidden");
 
-listaFilhos.innerHTML="";
+    areaFilhos
+    .classList
+    .add("hidden");
 
-contadorFilhos=0;
+
+    listaFilhos.innerHTML = "";
+
+
+    contadorFilhos = 0;
 
 }
 
@@ -1479,255 +1439,242 @@ adicionarFilho
 
 
 
-/* ==========================================
-ENVIO PARA PLANILHA
-========================================== */
+/* =================================================
+   ENVIO PARA GOOGLE SHEETS
+================================================= */
 
-document
-.getElementById("form")
-.addEventListener(
+form.addEventListener(
 "submit",
 async function(event){
 
-event.preventDefault();
 
+    event.preventDefault();
 
-const botao =
-document.getElementById(
-"submitBtn"
-);
 
+    mensagem
+    .classList
+    .add("hidden");
 
-const mensagem =
-document.getElementById(
-"msg"
-);
 
+    submitBtn.disabled = true;
 
-const erro =
-document.getElementById(
-"erro"
-);
 
+    submitBtn.textContent =
+    "⏳ Enviando confirmação...";
 
-mensagem
-.classList
-.add("hidden");
 
 
-erro
-.classList
-.add("hidden");
+    /* ===============================
+       PEGA OS FILHOS
+    =============================== */
 
+    const nomesFilhos =
 
-botao.disabled=true;
+    [...document.querySelectorAll(
+        ".filhoNome"
+    )]
 
-botao.innerHTML=
-"⏳ Enviando...";
+    .map(
+        campo =>
+        campo.value.trim()
+    )
 
+    .filter(Boolean);
 
 
-/* FILHOS */
 
-const nomesFilhos =
+    const idadesFilhos =
 
-[...document.querySelectorAll(
-".filhoNome"
-)]
+    [...document.querySelectorAll(
+        ".filhoIdade"
+    )]
 
-.map(
-elemento =>
-elemento.value.trim()
-)
+    .map(
+        campo =>
+        campo.value.trim()
+    )
 
-.filter(Boolean);
+    .filter(Boolean);
 
 
 
-const idadesFilhos =
+    /* ===============================
+       MONTA OS PARÂMETROS
+    =============================== */
 
-[...document.querySelectorAll(
-".filhoIdade"
-)]
+    const parametros =
+    new URLSearchParams();
 
-.map(
-elemento =>
-elemento.value.trim()
-)
 
-.filter(Boolean);
+    parametros.append(
+        "nome",
+        document
+        .getElementById("nome")
+        .value
+        .trim()
+    );
 
 
+    parametros.append(
+        "telefone",
+        document
+        .getElementById("telefone")
+        .value
+        .trim()
+    );
 
-/* PARÂMETROS */
 
-const parametros =
-new URLSearchParams();
+    parametros.append(
+        "presenca",
+        presenca.value
+    );
 
 
-parametros.append(
-"nome",
-document
-.getElementById("nome")
-.value
-.trim()
-);
+    parametros.append(
+        "acompanhante",
+        nomeAcompanhante.value.trim()
+    );
 
 
-parametros.append(
-"telefone",
-document
-.getElementById("telefone")
-.value
-.trim()
-);
+    parametros.append(
+        "filhos",
+        nomesFilhos.join(", ")
+    );
 
 
-parametros.append(
-"presenca",
-presenca.value
-);
+    parametros.append(
+        "idades",
+        idadesFilhos.join(", ")
+    );
 
 
-parametros.append(
-"acompanhante",
-nomeAcompanhante.value.trim()
-);
 
+    /* ===============================
+       MONTA A URL
+    =============================== */
 
-parametros.append(
-"filhos",
-nomesFilhos.join(", ")
-);
+    const url =
+    SCRIPT_URL +
+    "?" +
+    parametros.toString();
 
 
-parametros.append(
-"idades",
-idadesFilhos.join(", ")
-);
 
+    try{
 
 
-/* URL */
+        /*
+        Como já testamos a URL do Web App
+        diretamente e ela grava na planilha,
+        fazemos a mesma requisição GET aqui.
+        */
 
-const url =
-SCRIPT_URL +
-"?" +
-parametros.toString();
 
+        await fetch(
 
+            url,
 
-try{
+            {
 
+                method:"GET",
 
-/*
-NO-CORS é usado porque o site
-está hospedado no GitHub Pages
-e o destino é o Apps Script.
-*/
+                mode:"no-cors",
 
-await fetch(
+                cache:"no-store"
 
-url,
+            }
 
-{
+        );
 
-method:"GET",
 
-mode:"no-cors",
 
-cache:"no-store"
+        /* ===============================
+           CONFIRMAÇÃO
+        =============================== */
 
-}
+        mensagem
+        .classList
+        .remove("hidden");
 
-);
 
 
+        /* ===============================
+           LIMPA FORMULÁRIO
+        =============================== */
 
-/* SUCESSO */
+        form.reset();
 
-mensagem
-.classList
-.remove("hidden");
 
+        areaConvidados
+        .classList
+        .add("hidden");
 
 
-/* LIMPA FORMULÁRIO */
+        esconderAcompanhante();
 
-document
-.getElementById("form")
-.reset();
 
+        esconderFilhos();
 
-esconderAcompanhante();
 
-esconderFilhos();
+        acompanhante.required = false;
 
+        temFilhos.required = false;
 
 
-/*
-Leva a tela até a mensagem.
-*/
 
-mensagem.scrollIntoView({
+        /* ===============================
+           ROLA ATÉ A MENSAGEM
+        =============================== */
 
-behavior:"smooth",
+        mensagem.scrollIntoView({
 
-block:"center"
+            behavior:"smooth",
+
+            block:"center"
+
+        });
+
+
+
+    }catch(erro){
+
+
+        console.error(
+            "Erro:",
+            erro
+        );
+
+
+        alert(
+            "Não foi possível enviar a confirmação. Tente novamente."
+        );
+
+
+    }finally{
+
+
+        submitBtn.disabled = false;
+
+
+        submitBtn.textContent =
+        "🔥 Confirmar presença";
+
+
+    }
+
 
 });
 
 
 
-}catch(errorFetch){
-
-
-console.error(
-"Erro no envio:",
-errorFetch
-);
-
-
-erro
-.classList
-.remove("hidden");
-
-
-erro.scrollIntoView({
-
-behavior:"smooth",
-
-block:"center"
-
-});
-
-
-}finally{
-
-
-botao.disabled=false;
-
-
-botao.innerHTML=
-"🔥 Confirmar presença";
-
-
-}
-
-
-}
-
-);
-
-
-
-/* ==========================================
-CONTAGEM REGRESSIVA
-========================================== */
+/* =================================================
+   CONTAGEM REGRESSIVA
+================================================= */
 
 const dataEvento =
+
 new Date(
-"2026-10-31T12:00:00-03:00"
+    "2026-10-31T12:00:00-03:00"
 ).getTime();
 
 
@@ -1735,114 +1682,118 @@ new Date(
 function atualizarContagem(){
 
 
-const agora =
-new Date().getTime();
+    const agora =
+    new Date().getTime();
 
 
-const distancia =
-dataEvento-agora;
-
-
-
-if(distancia<=0){
-
-
-document
-.getElementById("dias")
-.textContent="0";
-
-
-document
-.getElementById("horas")
-.textContent="0";
-
-
-document
-.getElementById("minutos")
-.textContent="0";
-
-
-document
-.getElementById("segundos")
-.textContent="0";
-
-
-return;
-
-}
+    const distancia =
+    dataEvento - agora;
 
 
 
-const dias =
-Math.floor(
-
-distancia /
-(1000*60*60*24)
-
-);
+    if(distancia <= 0){
 
 
-
-const horas =
-Math.floor(
-
-(
-distancia %
-(1000*60*60*24)
-)
-/
-(1000*60*60)
-
-);
+        document
+        .getElementById("dias")
+        .textContent = "0";
 
 
+        document
+        .getElementById("horas")
+        .textContent = "0";
 
-const minutos =
-Math.floor(
 
-(
-distancia %
-(1000*60*60)
-)
-/
-(1000*60)
+        document
+        .getElementById("minutos")
+        .textContent = "0";
 
-);
+
+        document
+        .getElementById("segundos")
+        .textContent = "0";
+
+
+        return;
+
+    }
 
 
 
-const segundos =
-Math.floor(
+    const dias =
 
-(
-distancia %
-(1000*60)
-)
-/
-1000
+    Math.floor(
 
-);
+        distancia /
+        (1000 * 60 * 60 * 24)
+
+    );
 
 
 
-document
-.getElementById("dias")
-.textContent=dias;
+    const horas =
+
+    Math.floor(
+
+        (
+            distancia %
+            (1000 * 60 * 60 * 24)
+        )
+        /
+        (1000 * 60 * 60)
+
+    );
 
 
-document
-.getElementById("horas")
-.textContent=horas;
+
+    const minutos =
+
+    Math.floor(
+
+        (
+            distancia %
+            (1000 * 60 * 60)
+        )
+        /
+        (1000 * 60)
+
+    );
 
 
-document
-.getElementById("minutos")
-.textContent=minutos;
+
+    const segundos =
+
+    Math.floor(
+
+        (
+            distancia %
+            (1000 * 60)
+        )
+        /
+        1000
+
+    );
 
 
-document
-.getElementById("segundos")
-.textContent=segundos;
+
+    document
+    .getElementById("dias")
+    .textContent = dias;
+
+
+    document
+    .getElementById("horas")
+    .textContent = horas;
+
+
+    document
+    .getElementById("minutos")
+    .textContent = minutos;
+
+
+    document
+    .getElementById("segundos")
+    .textContent = segundos;
 
 
 }
@@ -1853,12 +1804,11 @@ atualizarContagem();
 
 
 setInterval(
-atualizarContagem,
-1000
+    atualizarContagem,
+    1000
 );
 
 </script>
-
 
 </body>
 
