@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,10 +11,6 @@
 
 <style>
 
-/* =========================
-   CONFIGURAÇÕES GERAIS
-========================= */
-
 *{
     box-sizing:border-box;
 }
@@ -22,6 +18,7 @@
 html{
     scroll-behavior:smooth;
 }
+
 body{
     margin:0;
     font-family:'Poppins',sans-serif;
@@ -42,9 +39,7 @@ body{
 }
 
 
-/* =========================
-   BANNER
-========================= */
+/* HERO */
 
 .hero{
 
@@ -67,7 +62,6 @@ body{
     position:relative;
 }
 
-
 .hero::after{
 
     content:"";
@@ -87,14 +81,12 @@ body{
     pointer-events:none;
 }
 
-
 .hero-content{
 
     position:relative;
 
     z-index:2;
 }
-
 
 .hero-date{
 
@@ -108,7 +100,6 @@ body{
 
     text-shadow:0 3px 10px black;
 }
-
 
 .btn{
 
@@ -131,7 +122,6 @@ body{
     transition:.3s;
 }
 
-
 .btn:hover{
 
     background:#b73223;
@@ -140,9 +130,7 @@ body{
 }
 
 
-/* =========================
-   SEÇÕES
-========================= */
+/* SEÇÕES */
 
 section{
 
@@ -152,7 +140,6 @@ section{
 
     padding:60px 20px;
 }
-
 
 h2{
 
@@ -166,9 +153,7 @@ h2{
 }
 
 
-/* =========================
-   CARDS
-========================= */
+/* CARDS */
 
 .card{
 
@@ -183,7 +168,6 @@ h2{
     backdrop-filter:blur(5px);
 }
 
-
 .card h2{
 
     color:#382216;
@@ -192,9 +176,7 @@ h2{
 }
 
 
-/* =========================
-   LOGO
-========================= */
+/* LOGO */
 
 .logo-area{
 
@@ -202,7 +184,6 @@ h2{
 
     margin-bottom:20px;
 }
-
 
 .logo-area img{
 
@@ -214,9 +195,7 @@ h2{
 }
 
 
-/* =========================
-   TEXTO
-========================= */
+/* TEXTO */
 
 .sobre-texto{
 
@@ -228,9 +207,7 @@ h2{
 }
 
 
-/* =========================
-   SPOTIFY
-========================= */
+/* PLAYLIST */
 
 .spotify-frame{
 
@@ -244,9 +221,7 @@ h2{
 }
 
 
-/* =========================
-   CONTAGEM REGRESSIVA
-========================= */
+/* CONTAGEM */
 
 .countdown{
 
@@ -258,7 +233,6 @@ h2{
 
     text-align:center;
 }
-
 
 .countdown div{
 
@@ -272,7 +246,6 @@ h2{
 
     font-weight:600;
 }
-
 
 .countdown span{
 
@@ -288,9 +261,7 @@ h2{
 }
 
 
-/* =========================
-   INFORMAÇÕES
-========================= */
+/* INFORMAÇÕES */
 
 .info-grid{
 
@@ -301,7 +272,6 @@ h2{
 
     gap:20px;
 }
-
 
 .info-box{
 
@@ -316,7 +286,6 @@ h2{
     text-align:center;
 }
 
-
 .info-box h3{
 
     margin-top:0;
@@ -325,9 +294,7 @@ h2{
 }
 
 
-/* =========================
-   MAPA
-========================= */
+/* MAPA */
 
 .map iframe{
 
@@ -340,14 +307,12 @@ h2{
     border-radius:15px;
 }
 
-
 .route-area{
 
     text-align:center;
 
     margin-top:20px;
 }
-
 
 .route-btn{
 
@@ -370,16 +335,13 @@ h2{
     transition:.3s;
 }
 
-
 .route-btn:hover{
 
     transform:translateY(-2px);
 }
 
 
-/* =========================
-   FORMULÁRIO
-========================= */
+/* FORM */
 
 form{
 
@@ -390,14 +352,12 @@ form{
     gap:15px;
 }
 
-
 label{
 
     font-weight:500;
 
     color:#3a2417;
 }
-
 
 input,
 select{
@@ -417,7 +377,6 @@ select{
     background:white;
 }
 
-
 input:focus,
 select:focus{
 
@@ -428,7 +387,6 @@ select:focus{
     box-shadow:
         0 0 0 3px rgba(215,68,46,.15);
 }
-
 
 .submit-btn{
 
@@ -455,12 +413,10 @@ select:focus{
     transition:.3s;
 }
 
-
 .submit-btn:hover{
 
     background:#b73223;
 }
-
 
 .submit-btn:disabled{
 
@@ -470,15 +426,12 @@ select:focus{
 }
 
 
-/* =========================
-   FILHOS
-========================= */
+/* FILHOS */
 
 .hidden{
 
     display:none !important;
 }
-
 
 .child-box{
 
@@ -493,12 +446,10 @@ select:focus{
     margin-bottom:12px;
 }
 
-
 .child-box input{
 
     margin-bottom:10px;
 }
-
 
 .add-child-btn{
 
@@ -520,9 +471,7 @@ select:focus{
 }
 
 
-/* =========================
-   MENSAGEM
-========================= */
+/* SUCESSO */
 
 .success{
 
@@ -542,9 +491,7 @@ select:focus{
 }
 
 
-/* =========================
-   RODAPÉ
-========================= */
+/* FOOTER */
 
 footer{
 
@@ -558,9 +505,7 @@ footer{
 }
 
 
-/* =========================
-   CELULAR
-========================= */
+/* RESPONSIVO */
 
 @media(max-width:768px){
 
@@ -571,18 +516,15 @@ footer{
         background-position:center;
     }
 
-
     section{
 
         padding:45px 16px;
     }
 
-
     .card{
 
         padding:28px 20px;
     }
-
 
     .countdown{
 
@@ -590,14 +532,12 @@ footer{
             repeat(2,1fr);
     }
 
-
     .logo-area img{
 
         max-width:180px;
     }
 
 }
-
 
 @media(max-width:480px){
 
@@ -608,12 +548,10 @@ footer{
         padding-bottom:30px;
     }
 
-
     .hero-date{
 
         font-size:16px;
     }
-
 
     .btn{
 
@@ -621,7 +559,6 @@ footer{
 
         font-size:14px;
     }
-
 
     .countdown span{
 
@@ -634,13 +571,10 @@ footer{
 
 </head>
 
-
 <body>
 
 
-<!-- =========================
-     BANNER
-========================= -->
+<!-- HERO -->
 
 <section class="hero">
 
@@ -651,7 +585,6 @@ footer{
             31 de Outubro de 2026 • Ituiutaba/MG
 
         </div>
-
 
         <a
         href="#rsvp"
@@ -667,14 +600,11 @@ footer{
 
 
 
-<!-- =========================
-     SOBRE
-========================= -->
+<!-- SOBRE -->
 
 <section>
 
 <div class="card">
-
 
     <div class="logo-area">
 
@@ -684,20 +614,14 @@ footer{
 
     </div>
 
-
     <h2>
-
         🍖 Sobre o evento
-
     </h2>
-
 
     <p class="sobre-texto">
 
         Estou chegando aos
-
         <strong>30 anos</strong>
-
         e quero comemorar com um churrasco especial!
 
         <br><br>
@@ -727,18 +651,13 @@ footer{
 
 
 
-<!-- =========================
-     PLAYLIST
-========================= -->
+<!-- PLAYLIST -->
 
 <section>
 
 <h2>
-
     🎵 Playlist da Churrasqueada
-
 </h2>
-
 
 <div class="card">
 
@@ -756,54 +675,34 @@ footer{
 
 
 
-<!-- =========================
-     CONTAGEM REGRESSIVA
-========================= -->
+<!-- CONTAGEM -->
 
 <section>
 
 <h2>
-
     ⏳ Falta pouco!
-
 </h2>
-
 
 <div class="countdown">
 
     <div>
-
         <span id="dias">0</span>
-
         Dias
-
     </div>
 
-
     <div>
-
         <span id="horas">0</span>
-
         Horas
-
     </div>
 
-
     <div>
-
         <span id="minutos">0</span>
-
         Minutos
-
     </div>
 
-
     <div>
-
         <span id="segundos">0</span>
-
         Segundos
-
     </div>
 
 </div>
@@ -812,92 +711,63 @@ footer{
 
 
 
-<!-- =========================
-     INFORMAÇÕES
-========================= -->
+<!-- INFORMAÇÕES -->
 
 <section>
 
 <h2>
-
     📅 Informações da festa
-
 </h2>
 
-
 <div class="info-grid">
-
 
     <div class="info-box">
 
         <h3>📅 Data</h3>
 
         <p>
-
             31 de Outubro
-
             <br>
-
             <strong>2026</strong>
-
         </p>
 
     </div>
-
-
 
     <div class="info-box">
 
         <h3>⏰ Horário</h3>
 
         <p>
-
             A partir das
-
             <br>
-
             <strong>12h</strong>
-
         </p>
 
     </div>
-
-
 
     <div class="info-box">
 
         <h3>📍 Local</h3>
 
         <p>
-
             Clube dos Bancários
-
             <br>
-
             Ituiutaba/MG
-
         </p>
 
     </div>
-
-
 
     <div class="info-box">
 
         <h3>🍖 Evento</h3>
 
         <p>
-
             <strong>Churrasqueada</strong>
-
             <br>
-
             Luciano 30 anos
-
         </p>
 
     </div>
-
 
 </div>
 
@@ -905,21 +775,15 @@ footer{
 
 
 
-<!-- =========================
-     LOCAL
-========================= -->
+<!-- MAPA -->
 
 <section>
 
 <h2>
-
     📍 Local da Churrasqueada
-
 </h2>
 
-
 <div class="card">
-
 
     <div class="map">
 
@@ -929,7 +793,6 @@ footer{
         </iframe>
 
     </div>
-
 
     <div class="route-area">
 
@@ -945,31 +808,23 @@ footer{
 
     </div>
 
-
 </div>
 
 </section>
 
 
 
-<!-- =========================
-     CONFIRMAÇÃO
-========================= -->
+<!-- RSVP -->
 
 <section id="rsvp">
 
 <div class="card">
 
-
 <h2>
-
     ✅ Confirme sua presença
-
 </h2>
 
-
 <form id="form">
-
 
     <input
     id="nome"
@@ -977,50 +832,34 @@ footer{
     placeholder="Seu nome"
     required>
 
-
-
     <input
     id="telefone"
     type="tel"
     placeholder="Telefone / WhatsApp"
     required>
 
-
-
     <label for="presenca">
-
         Você irá comparecer?
-
     </label>
-
 
     <select
     id="presenca"
     required>
 
         <option value="">
-
             Selecione
-
         </option>
 
         <option value="Sim">
-
             Sim
-
         </option>
 
         <option value="Não">
-
             Não
-
         </option>
 
     </select>
 
-
-
-    <!-- CAMPOS EXTRAS -->
 
     <div
     id="areaConvidados"
@@ -1028,34 +867,24 @@ footer{
 
 
         <label for="acompanhante">
-
             Vai levar acompanhante?
-
         </label>
-
 
         <select id="acompanhante">
 
             <option value="">
-
                 Selecione
-
             </option>
 
             <option value="sim">
-
                 Sim
-
             </option>
 
             <option value="nao">
-
                 Não
-
             </option>
 
         </select>
-
 
 
         <div
@@ -1070,45 +899,32 @@ footer{
         </div>
 
 
-
         <label for="temFilhos">
-
             Vai levar filhos?
-
         </label>
-
 
         <select id="temFilhos">
 
             <option value="">
-
                 Selecione
-
             </option>
 
             <option value="sim">
-
                 Sim
-
             </option>
 
             <option value="nao">
-
                 Não
-
             </option>
 
         </select>
-
 
 
         <div
         id="areaFilhos"
         class="hidden">
 
-
             <div id="listaFilhos"></div>
-
 
             <button
             type="button"
@@ -1119,12 +935,9 @@ footer{
 
             </button>
 
-
         </div>
 
-
     </div>
-
 
 
     <button
@@ -1136,17 +949,21 @@ footer{
 
     </button>
 
-
 </form>
-
 
 
 <div
 id="msg"
 class="success hidden">
 
-     Resposta enviada com sucesso!
+    🎉 Resposta enviada com sucesso!
+
+    <br><br>
+
+    Obrigado por responder.
+
     <br>
+
     Nos vemos na Churrasqueada! 🔥🍖
 
 </div>
@@ -1168,106 +985,87 @@ class="success hidden">
 
 <script>
 
-/* =================================================
-   URL DO SEU GOOGLE APPS SCRIPT
-================================================= */
+/* ================================
+   NOVA URL DO APPS SCRIPT
+================================ */
 
 const SCRIPT_URL =
-"https://script.google.com/macros/s/AKfycbxTaZ0R2u6V8qFJBAao9itCZjlA2_K-5gUHuUxr90EvfchBGHew083LLDlWvgwQz4oV3Q/exec";
+"https://script.google.com/macros/s/AKfycbwMr6sUAbVbhRiEibgXvS84nWsKSdYYyb_Gg_o58gnKATQBmOSKCxhXwO-sadhAWb1etg/exec";
 
 
 
-/* =================================================
+/* ================================
    ELEMENTOS
-================================================= */
+================================ */
 
 const form =
 document.getElementById("form");
 
-
 const presenca =
 document.getElementById("presenca");
-
 
 const areaConvidados =
 document.getElementById("areaConvidados");
 
-
 const acompanhante =
 document.getElementById("acompanhante");
-
 
 const areaAcompanhante =
 document.getElementById("areaAcompanhante");
 
-
 const nomeAcompanhante =
 document.getElementById("nomeAcompanhante");
-
 
 const temFilhos =
 document.getElementById("temFilhos");
 
-
 const areaFilhos =
 document.getElementById("areaFilhos");
-
 
 const listaFilhos =
 document.getElementById("listaFilhos");
 
-
 const submitBtn =
 document.getElementById("submitBtn");
 
-
 const mensagem =
 document.getElementById("msg");
-
 
 let contadorFilhos = 0;
 
 
 
-/* =================================================
+/* ================================
    PRESENÇA
-================================================= */
+================================ */
 
 presenca.addEventListener(
 "change",
 function(){
 
-
     if(this.value === "Sim"){
-
 
         areaConvidados
         .classList
         .remove("hidden");
 
-
         acompanhante.required = true;
 
         temFilhos.required = true;
 
-
     }else{
-
 
         areaConvidados
         .classList
         .add("hidden");
 
-
         acompanhante.required = false;
 
         temFilhos.required = false;
 
-
         acompanhante.value = "";
 
         temFilhos.value = "";
-
 
         esconderAcompanhante();
 
@@ -1275,53 +1073,42 @@ function(){
 
     }
 
-
 });
 
 
 
-/* =================================================
+/* ================================
    ACOMPANHANTE
-================================================= */
+================================ */
 
 acompanhante.addEventListener(
 "change",
 function(){
 
-
     if(this.value === "sim"){
-
 
         areaAcompanhante
         .classList
         .remove("hidden");
 
-
         nomeAcompanhante.required = true;
 
-
     }else{
-
 
         esconderAcompanhante();
 
     }
 
-
 });
 
 
-
 function esconderAcompanhante(){
-
 
     areaAcompanhante
     .classList
     .add("hidden");
 
-
     nomeAcompanhante.value = "";
-
 
     nomeAcompanhante.required = false;
 
@@ -1329,22 +1116,19 @@ function esconderAcompanhante(){
 
 
 
-/* =================================================
+/* ================================
    FILHOS
-================================================= */
+================================ */
 
 temFilhos.addEventListener(
 "change",
 function(){
 
-
     if(this.value === "sim"){
-
 
         areaFilhos
         .classList
         .remove("hidden");
-
 
         if(contadorFilhos === 0){
 
@@ -1352,32 +1136,24 @@ function(){
 
         }
 
-
     }else{
-
 
         esconderFilhos();
 
     }
 
-
 });
-
 
 
 function adicionarFilho(){
 
-
     contadorFilhos++;
-
 
     const div =
     document.createElement("div");
 
-
     div.className =
     "child-box";
-
 
     div.innerHTML = `
 
@@ -1386,7 +1162,6 @@ function adicionarFilho(){
         class="filhoNome"
         placeholder="Nome do filho ${contadorFilhos}"
         required>
-
 
         <input
         type="number"
@@ -1398,29 +1173,22 @@ function adicionarFilho(){
 
     `;
 
-
-    listaFilhos
-    .appendChild(div);
+    listaFilhos.appendChild(div);
 
 }
 
 
-
 function esconderFilhos(){
-
 
     areaFilhos
     .classList
     .add("hidden");
 
-
     listaFilhos.innerHTML = "";
-
 
     contadorFilhos = 0;
 
 }
-
 
 
 document
@@ -1432,34 +1200,25 @@ adicionarFilho
 
 
 
-/* =================================================
-   ENVIO PARA GOOGLE SHEETS
-================================================= */
+/* ================================
+   ENVIO PARA PLANILHA
+================================ */
 
 form.addEventListener(
 "submit",
 async function(event){
 
-
     event.preventDefault();
-
 
     mensagem
     .classList
     .add("hidden");
 
-
     submitBtn.disabled = true;
-
 
     submitBtn.textContent =
     "⏳ Enviando confirmação...";
 
-
-
-    /* ===============================
-       PEGA OS FILHOS
-    =============================== */
 
     const nomesFilhos =
 
@@ -1475,7 +1234,6 @@ async function(event){
     .filter(Boolean);
 
 
-
     const idadesFilhos =
 
     [...document.querySelectorAll(
@@ -1489,11 +1247,6 @@ async function(event){
 
     .filter(Boolean);
 
-
-
-    /* ===============================
-       MONTA OS PARÂMETROS
-    =============================== */
 
     const parametros =
     new URLSearchParams();
@@ -1541,59 +1294,28 @@ async function(event){
     );
 
 
-
-    /* ===============================
-       MONTA A URL
-    =============================== */
-
     const url =
     SCRIPT_URL +
     "?" +
     parametros.toString();
 
 
-
     try{
 
-
-        /*
-        Como já testamos a URL do Web App
-        diretamente e ela grava na planilha,
-        fazemos a mesma requisição GET aqui.
-        */
-
-
         await fetch(
-
             url,
-
             {
-
                 method:"GET",
-
                 mode:"no-cors",
-
                 cache:"no-store"
-
             }
-
         );
 
-
-
-        /* ===============================
-           CONFIRMAÇÃO
-        =============================== */
 
         mensagem
         .classList
         .remove("hidden");
 
-
-
-        /* ===============================
-           LIMPA FORMULÁRIO
-        =============================== */
 
         form.reset();
 
@@ -1614,11 +1336,6 @@ async function(event){
         temFilhos.required = false;
 
 
-
-        /* ===============================
-           ROLA ATÉ A MENSAGEM
-        =============================== */
-
         mensagem.scrollIntoView({
 
             behavior:"smooth",
@@ -1628,145 +1345,110 @@ async function(event){
         });
 
 
-
     }catch(erro){
-
 
         console.error(
             "Erro:",
             erro
         );
 
-
         alert(
             "Não foi possível enviar a confirmação. Tente novamente."
         );
 
-
     }finally{
 
-
         submitBtn.disabled = false;
-
 
         submitBtn.textContent =
         "🔥 Confirmar presença";
 
-
     }
-
 
 });
 
 
 
-/* =================================================
+/* ================================
    CONTAGEM REGRESSIVA
-================================================= */
+================================ */
 
 const dataEvento =
-
 new Date(
     "2026-10-31T12:00:00-03:00"
 ).getTime();
 
 
-
 function atualizarContagem(){
-
 
     const agora =
     new Date().getTime();
-
 
     const distancia =
     dataEvento - agora;
 
 
-
     if(distancia <= 0){
-
 
         document
         .getElementById("dias")
         .textContent = "0";
 
-
         document
         .getElementById("horas")
         .textContent = "0";
-
 
         document
         .getElementById("minutos")
         .textContent = "0";
 
-
         document
         .getElementById("segundos")
         .textContent = "0";
-
 
         return;
 
     }
 
 
-
     const dias =
-
     Math.floor(
-
         distancia /
         (1000 * 60 * 60 * 24)
-
     );
 
 
-
     const horas =
-
     Math.floor(
-
         (
             distancia %
             (1000 * 60 * 60 * 24)
         )
         /
         (1000 * 60 * 60)
-
     );
 
 
-
     const minutos =
-
     Math.floor(
-
         (
             distancia %
             (1000 * 60 * 60)
         )
         /
         (1000 * 60)
-
     );
 
 
-
     const segundos =
-
     Math.floor(
-
         (
             distancia %
             (1000 * 60)
         )
         /
         1000
-
     );
-
 
 
     document
@@ -1788,13 +1470,10 @@ function atualizarContagem(){
     .getElementById("segundos")
     .textContent = segundos;
 
-
 }
 
 
-
 atualizarContagem();
-
 
 setInterval(
     atualizarContagem,
@@ -1804,5 +1483,4 @@ setInterval(
 </script>
 
 </body>
-
 </html>
